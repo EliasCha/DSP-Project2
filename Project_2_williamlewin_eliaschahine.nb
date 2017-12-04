@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      3761,        123]
-NotebookOptionsPosition[      2425,         84]
-NotebookOutlinePosition[      2778,        100]
-CellTagsIndexPosition[      2735,         97]
+NotebookDataLength[     13407,        426]
+NotebookOptionsPosition[     10427,        349]
+NotebookOutlinePosition[     10780,        365]
+CellTagsIndexPosition[     10737,        362]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,10 +41,185 @@ Cell["Part 1", "Section",
   3.7198920645211363`*^9}},ExpressionUUID->"9a707a71-4977-4374-86b1-\
 3883a88eaa02"],
 
+Cell[CellGroupData[{
+
 Cell["Assignment", "Subsection",
  CellChangeTimes->{{3.719893143271935*^9, 
   3.7198931581801643`*^9}},ExpressionUUID->"85d4f9db-8c3f-4088-94d5-\
 91a4c411e9bc"],
+
+Cell[TextData[{
+ "Introduce the system function of an IIR-filter as\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"H", "(", "z", ")"}], "=", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SuperscriptBox["z", 
+         RowBox[{"-", "1"}]]}], ")"}], "  ", 
+      RowBox[{
+       UnderoverscriptBox["\[Product]", 
+        RowBox[{"k", "=", "1"}], "4"], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SuperscriptBox["z", 
+            RowBox[{"-", "1"}]], 
+           SuperscriptBox["e", 
+            RowBox[{
+             RowBox[{"-", "i"}], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"2", "k"}], "-", "1"}], ")"}], 
+             FractionBox[
+              RowBox[{"11", "\[Pi]"}], "100"]}]]}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           SuperscriptBox["z", 
+            RowBox[{"-", "1"}]], 
+           SuperscriptBox["e", 
+            RowBox[{"i", " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"2", "k"}], "-", "1"}], ")"}], 
+             FractionBox[
+              RowBox[{"11", "\[Pi]"}], "100"]}]]}]}], ")"}]}]}]}], 
+     RowBox[{"100", " ", 
+      RowBox[{
+       UnderoverscriptBox["\[Product]", 
+        RowBox[{"k", "=", "1"}], "4"], 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{"0.9", 
+           SuperscriptBox["z", 
+            RowBox[{"-", "1"}]], 
+           SuperscriptBox["e", 
+            RowBox[{
+             RowBox[{"-", "i"}], " ", "k", 
+             FractionBox[
+              RowBox[{"11", "\[Pi]"}], "50"]}]]}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{"0.9", 
+           SuperscriptBox["z", 
+            RowBox[{"-", "1"}]], 
+           SuperscriptBox["e", 
+            RowBox[{"i", " ", "k", 
+             FractionBox[
+              RowBox[{"11", "\[Pi]"}], "50"]}]]}]}], ")"}]}]}]}]]}], 
+   TraditionalForm]], "DisplayFormula",ExpressionUUID->
+  "c05b0a33-9b57-4152-9729-6db815e7c202"],
+ "\n"
+}], "Text",
+ CellChangeTimes->{{3.721381068331438*^9, 3.721381101485764*^9}, {
+  3.721381190428986*^9, 
+  3.721381201393652*^9}},ExpressionUUID->"22174a65-b7c9-49b0-ab91-\
+5a6309b13340"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Make a pole-zero plot of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"H", "(", "z", ")"}], TraditionalForm]],ExpressionUUID->
+  "b1b8a5fe-4c08-45af-9224-32bfbf40ba76"],
+ ". Is the system stable?"
+}], "Item",ExpressionUUID->"8ed9aeac-e6f6-4876-87c3-60845d22082e"],
+
+Cell["\<\
+Discuss how the filter works, what happens with certain frequencies?\
+\>", "Item",ExpressionUUID->"f3010108-3526-4e6d-ae57-cece700c8b50"],
+
+Cell["Illustrate the frequency response of the IIR.", "Item",ExpressionUUID->"ef7a7622-a21a-49f0-867b-89fabc6a1c44"],
+
+Cell["Sketch a direct form structure to illustrate the IIR.", "Item",ExpressionUUID->"3ca13ce3-5629-4612-bccc-b1dbc0131843"],
+
+Cell[TextData[{
+ "Introduce the signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "(", "t", ")"}], "=", 
+     RowBox[{
+      FractionBox["1", "\[Pi]"], 
+      RowBox[{
+       UnderoverscriptBox["\[Sum]", 
+        RowBox[{"k", "=", "1"}], "9"], 
+       RowBox[{
+        FractionBox[
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"-", "1"}], ")"}], 
+          RowBox[{"k", "-", "1"}]], "k"], 
+        RowBox[{"sin", "(", 
+         RowBox[{"2", " ", "\[Pi]", " ", 
+          SubscriptBox["f", "0"], " ", "k", " ", "t"}], ")"}]}]}]}]}], ",", 
+    " ", 
+    RowBox[{
+     SubscriptBox["f", "0"], "=", 
+     RowBox[{"220", "Hz"}]}]}], TraditionalForm]],ExpressionUUID->
+  "3e54d5c9-7500-48e6-b4ff-ffa2065faf82"],
+ ". This signal is sampled with the frequency ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["f", "s"], "=", 
+    RowBox[{"4", "kHz"}]}], TraditionalForm]],ExpressionUUID->
+  "a5cbd117-6e71-4af7-a975-918262e13a9c"],
+ ". Plot the sampled signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "4c4229ef-072b-449a-99d0-9f96dda81eba"],
+ "."
+}], "Item",
+ UnderoverscriptBoxOptions->{
+ LimitsPositioning->
+  False},ExpressionUUID->"00f54344-1ae4-4190-85ba-fd604b8d8e95"],
+
+Cell[TextData[{
+ "Now, the signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "48a6a884-3aa8-49f4-b204-5c9c97cf02a6"],
+ " is input to the IIR above. Compute and plot the output signal ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "89a56dd1-d454-4e5a-bf0d-a640c118d945"],
+ "."
+}], "Item",
+ UnderoverscriptBoxOptions->{
+ LimitsPositioning->
+  False},ExpressionUUID->"45e7f986-2ec6-45e4-97db-6798bc3e3e96"],
+
+Cell[TextData[{
+ "Finally, draw and compare the two-sided spectrum of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "62d9e7ac-7ff7-48dd-8d82-7bc1d34924e9"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"y", "[", "n", "]"}], TraditionalForm]],ExpressionUUID->
+  "c5d2d8bc-7b8f-42f7-91c5-c319be864b9a"],
+ "."
+}], "Item",
+ UnderoverscriptBoxOptions->{
+ LimitsPositioning->
+  False},ExpressionUUID->"0854fe8b-c423-48ef-b89d-07053b2a70d4"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Discussion", "Subsection",
  CellChangeTimes->{{3.719893143271935*^9, 
@@ -65,10 +240,100 @@ Cell["Part 2", "Section",
   3.721381018010539*^9}},ExpressionUUID->"f8d8dae0-4b4d-4b40-8ac1-\
 e0ed47438e11"],
 
+Cell[CellGroupData[{
+
 Cell["Assignment", "Subsection",
  CellChangeTimes->{{3.719893143271935*^9, 
   3.7198931581801643`*^9}},ExpressionUUID->"03978c21-bfef-4b9b-a968-\
 6f723c979e3f"],
+
+Cell["Introduce the following signal", "Text",ExpressionUUID->"b75931fd-fc5d-4be7-9104-7648840bc59d"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"x", "(", "t", ")"}], "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "50"}], " ", "t"}]], " ", 
+       RowBox[{"cos", "(", 
+        RowBox[{"2", " ", "\[Pi]", " ", "100", " ", "t"}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "75"}], " ", "t"}]], " ", 
+       RowBox[{"cos", "(", 
+        RowBox[{"2", " ", "\[Pi]", " ", "200", " ", "t"}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         RowBox[{"-", "100"}], " ", "t"}]], " ", 
+       RowBox[{"cos", "(", 
+        RowBox[{"2", " ", "\[Pi]", " ", "300", " ", "t"}], ")"}]}]}], ")"}], 
+    RowBox[{"u", "(", "t", ")"}]}]}], TraditionalForm]], "DisplayFormula",Expr\
+essionUUID->"a2ba77bf-9a3b-4f67-bb85-fa55868c3e4b"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Make a plot of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "(", "t", ")"}], TraditionalForm]],ExpressionUUID->
+  "cc958d08-adaa-42da-a065-c3cea395536c"],
+ "."
+}], "Item",ExpressionUUID->"ec39a7e2-c3d3-411f-bbd8-d76ec83fad01"],
+
+Cell[TextData[{
+ "Compute the spectrum ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"X", "(", 
+    RowBox[{"j", " ", "\[Omega]"}], ")"}], TraditionalForm]],ExpressionUUID->
+  "502bb53b-7ad4-4d2a-b8e4-165ba19d2668"],
+ "."
+}], "Item",ExpressionUUID->"89bac823-4d32-4f06-b19b-a733a6faa8ff"],
+
+Cell[TextData[{
+ "Plot ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{RowBox[{"X", "(", 
+       RowBox[{"j", " ", "\[Omega]"}], ")"}]},
+    "Abs"], TraditionalForm]],ExpressionUUID->
+  "2ae8ffa0-d264-4a24-83fe-98cb25eee35b"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"arg", "(", 
+    RowBox[{"X", "(", 
+     RowBox[{"j", " ", "\[Omega]"}], ")"}], ")"}], TraditionalForm]],
+  ExpressionUUID->"5f44cc4f-4bae-479b-a2f7-dda115daf15a"],
+ "."
+}], "Item",ExpressionUUID->"fd423fa0-78c2-42e0-9dae-23ed6c92a7c9"],
+
+Cell["\<\
+There are some distinct local maxima and minima in the spectrum. Solve for \
+these frequencies.\
+\>", "Item",ExpressionUUID->"17e4e288-921e-4a91-a829-2aae2fc63acf"],
+
+Cell[TextData[{
+ "Can you motivate the local maxima from the expression ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"x", "(", "t", ")"}], TraditionalForm]],ExpressionUUID->
+  "c6bb54a0-3394-42d3-ad3c-83023b2f564f"],
+ "?"
+}], "Item",
+ UnderoverscriptBoxOptions->{
+ LimitsPositioning->
+  False},ExpressionUUID->"9df8007e-b16e-4843-aa9f-e21032ab9cd9"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Discussion", "Subsection",
  CellChangeTimes->{{3.719893143271935*^9, 
@@ -107,21 +372,59 @@ Cell[804, 28, 214, 6, 81, "Subtitle", "ExpressionUUID" -> \
 Cell[CellGroupData[{
 Cell[1043, 38, 153, 3, 64, "Section", "ExpressionUUID" -> \
 "9a707a71-4977-4374-86b1-3883a88eaa02"],
-Cell[1199, 43, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
+Cell[CellGroupData[{
+Cell[1221, 45, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
 "85d4f9db-8c3f-4088-94d5-91a4c411e9bc"],
-Cell[1362, 48, 160, 3, 36, "Subsection", "ExpressionUUID" -> \
+Cell[1384, 50, 2292, 72, 123, "Text", "ExpressionUUID" -> \
+"22174a65-b7c9-49b0-ab91-5a6309b13340"],
+Cell[CellGroupData[{
+Cell[3701, 126, 276, 7, 30, "Item", "ExpressionUUID" -> \
+"8ed9aeac-e6f6-4876-87c3-60845d22082e"],
+Cell[3980, 135, 147, 2, 30, "Item", "ExpressionUUID" -> \
+"f3010108-3526-4e6d-ae57-cece700c8b50"],
+Cell[4130, 139, 116, 0, 30, "Item", "ExpressionUUID" -> \
+"ef7a7622-a21a-49f0-867b-89fabc6a1c44"],
+Cell[4249, 141, 124, 0, 30, "Item", "ExpressionUUID" -> \
+"3ca13ce3-5629-4612-bccc-b1dbc0131843"],
+Cell[4376, 143, 1285, 42, 68, "Item", "ExpressionUUID" -> \
+"00f54344-1ae4-4190-85ba-fd604b8d8e95"],
+Cell[5664, 187, 511, 15, 30, "Item", "ExpressionUUID" -> \
+"45e7f986-2ec6-45e4-97db-6798bc3e3e96"],
+Cell[6178, 204, 489, 15, 30, "Item", "ExpressionUUID" -> \
+"0854fe8b-c423-48ef-b89d-07053b2a70d4"]
+}, Open  ]]
+}, Open  ]],
+Cell[6694, 223, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
 "dcbb5e0b-45b0-45d9-b0b0-b5103e9013c9"],
-Cell[1525, 53, 152, 3, 36, "Subsection", "ExpressionUUID" -> \
+Cell[6857, 228, 152, 3, 36, "Subsection", "ExpressionUUID" -> \
 "e4607c36-21e0-4478-b986-c3d3fe889813"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1714, 61, 202, 4, 64, "Section", "ExpressionUUID" -> \
+Cell[7046, 236, 202, 4, 64, "Section", "ExpressionUUID" -> \
 "f8d8dae0-4b4d-4b40-8ac1-e0ed47438e11"],
-Cell[1919, 67, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
+Cell[CellGroupData[{
+Cell[7273, 244, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
 "03978c21-bfef-4b9b-a968-6f723c979e3f"],
-Cell[2082, 72, 160, 3, 36, "Subsection", "ExpressionUUID" -> \
+Cell[7436, 249, 101, 0, 30, "Text", "ExpressionUUID" -> \
+"b75931fd-fc5d-4be7-9104-7648840bc59d"],
+Cell[7540, 251, 929, 26, 29, "DisplayFormula", "ExpressionUUID" -> \
+"a2ba77bf-9a3b-4f67-bb85-fa55868c3e4b"],
+Cell[CellGroupData[{
+Cell[8494, 281, 244, 7, 30, "Item", "ExpressionUUID" -> \
+"ec39a7e2-c3d3-411f-bbd8-d76ec83fad01"],
+Cell[8741, 290, 282, 8, 30, "Item", "ExpressionUUID" -> \
+"89bac823-4d32-4f06-b19b-a733a6faa8ff"],
+Cell[9026, 300, 507, 16, 30, "Item", "ExpressionUUID" -> \
+"fd423fa0-78c2-42e0-9dae-23ed6c92a7c9"],
+Cell[9536, 318, 174, 3, 30, "Item", "ExpressionUUID" -> \
+"17e4e288-921e-4a91-a829-2aae2fc63acf"],
+Cell[9713, 323, 344, 10, 30, "Item", "ExpressionUUID" -> \
+"9df8007e-b16e-4843-aa9f-e21032ab9cd9"]
+}, Open  ]]
+}, Open  ]],
+Cell[10084, 337, 160, 3, 44, "Subsection", "ExpressionUUID" -> \
 "b5f48795-8e6a-4d90-af2d-562c043527a0"],
-Cell[2245, 77, 152, 3, 36, "Subsection", "ExpressionUUID" -> \
+Cell[10247, 342, 152, 3, 36, "Subsection", "ExpressionUUID" -> \
 "5e6e16a3-a8ed-4e01-bfcc-ae0d0d874e4a"]
 }, Open  ]]
 }, Open  ]]
